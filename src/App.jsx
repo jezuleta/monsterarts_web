@@ -6,6 +6,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './screens/Home'
 import Tienda from './screens/Tienda'
+import Foother from './components/Foother'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Navbar />
         <Home />
         <Tienda />
+        <Foother />
       </div>
 
     </>

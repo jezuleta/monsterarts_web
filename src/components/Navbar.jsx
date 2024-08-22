@@ -20,10 +20,13 @@ const Navbar = () => {
         <div className={NavbarOpen === false ? styles.nav : styles.navOpen}>
 
             <div>
-                <img src='public/images/logo.png' alt="Logo" className={NavbarOpen === false ? styles.logo : styles.logoOpen} />
+                {NavbarOpen ? (
+                    <img src='public/images/logo_blanco-01.png' alt="Logo" className={styles.logoOpen} />
+                ) : (
+                    <img src='public/images/logo.png' alt="Logo" className={styles.logo} />
+                )}
             </div>
 
-            {!NavbarOpen && <p>Monster Arts | Laboratorio Creativo</p>}
             {!NavbarOpen ? (
                 <TiThMenu onClick={() => setNavbarOpen(!NavbarOpen)} size={25} />
             ) : (
@@ -33,7 +36,7 @@ const Navbar = () => {
                 <ul>
                     {links.map((x) => (
                         <div>
-                            <Link>{x.link}</Link>
+                            <Link onClick={() => setNavbarOpen(false)} smoot={true} duration={500} className={styles.navLink}>{x.link}</Link>
                         </div>
                     ))}
                 </ul>
