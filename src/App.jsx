@@ -6,7 +6,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './screens/Home'
 import Tienda from './screens/Tienda'
-import Foother from './components/Foother'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Home />
         <Tienda />
-        <Foother />
+        <Footer />
       </div>
 
     </>

@@ -1,0 +1,11 @@
+.footer{
+    text-align: center;
+    background-image: url(../../public/images/fondo.png);
+    padding: 40px;
+}
+
+.copyright{
+    color: #f6f6f6;
+    font-size: 13px;
+    margin: 20px;
+}
