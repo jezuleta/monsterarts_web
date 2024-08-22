@@ -1,0 +1,28 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2d2d2d;
+    color: #f6f6f6;
+}
+
+.navOpen{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../../public/images/busto_oscura_fondo_nav.png); 
+    background-size: cover;
+    flex-direction: column;
+    text-align: center;
+
+    color: #f6f6f6;
+}
+
+.logo{
+    width: 20%;
+}
+
+.logoOpen{
+    width: 30%;
+}
