@@ -6,6 +6,7 @@
 
     padding: 20px;
     background-color: #f6f6f6;
+    color: #2d2d2d;
 }
 
 .logo{
@@ -19,15 +20,115 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
 
     background-image: url(../../public/images/busto_oscura_fondo_nav.png); 
     background-size: cover;
-    color: #f6f6f6;
 }
 
 .logoOpen{
     width: 150px;
+    animation-name: animationLogo;
+    animation-duration: 1s;
 }
 
+.navLink{
+    font-size: 22px;
+    font-weight: bold;
+    color: #f6f6f6;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.navLink:hover{
+    color: #E69804;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: 0.1s;
+}
+
+.border{
+    display: flex;
+    height: 1px;
+    animation-name: animationBorder;
+    animation-duration: 1s;
+    background-color: #E69804;
+}
+
+
+
+
+
+
+
+
+/* +---------------------------------+ */
+
+
+
+
+
+
+
+@keyframes animationBorder {
+    0%{
+        width: 0%;
+    }    
+
+    100%{
+       width: 100%;
+    }
+}
+
+@keyframes animationLogo {
+    0%{
+        height: 0%;
+    }    
+
+    100%{
+        height: 100%;
+    }
+}
+
+
+
+
+/* +---------------------------------+ */
+
+
+
+
+
+
+
+@media (min-width : 800px){
+    .nav {
+        align-content: center;
+        align-items: center;
+    }
+    .linksContainer{
+        display: flex;
+        flex-direction: row;
+    }
+    .border{
+        height: 0%;
+    }
+    .navLink{
+        color: #2d2d2d;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width : 800px){
+    .nav{
+        flex-direction: column;
+    }
+    .logo{
+        padding-bottom: 35px;
+    }
+    .navOpen{
+        text-align: center;
+    }
+}

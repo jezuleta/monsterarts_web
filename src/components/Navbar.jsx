@@ -1,11 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import styles from './Navbar.module.css';
 import { TiThMenu } from "react-icons/ti";
 import { IoMdCloseCircle } from "react-icons/io";
 
+ /*+-----------------------------------------------------------------------------------+*/   
+
 const Navbar = () => {
-    const [NavbarOpen, setNavbarOpen] = useState(false)
+    const [NavbarOpen, setNavbarOpen] = useState(false);
+
+    const [windowDimension, setWindowDimension] = useState({
+        width: window.innerWidth,
+        heigth: window.innerHeight,
+    });
+
+    const detectDimesion = () =>{
+        setWindowDimension({
+            width: window.innerWidth,
+            heigth: window.innerHeight,
+        })
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', detectDimesion)
+        windowDimension.width > 800 && setNavbarOpen(false)
+        return () =>(
+            removeEventListener('resize', detectDimesion)
+        )
+    },[windowDimension])
 
     const links = [
         { id: 1, link: 'Home' },
@@ -16,8 +38,11 @@ const Navbar = () => {
         { id: 6, link: 'Nosotros' },
     ];
 
+ /*+-----------------------------------------------------------------------------------+*/   
+
     return (
-        <div className={NavbarOpen === false ? styles.nav : styles.navOpen}>
+        <div className={!NavbarOpen ? styles.nav : styles.navOpen}>
+
 
             <div>
                 {NavbarOpen ? (
@@ -27,19 +52,29 @@ const Navbar = () => {
                 )}
             </div>
 
-            {!NavbarOpen ? (
-                <TiThMenu onClick={() => setNavbarOpen(!NavbarOpen)} size={25} />
-            ) : (
-                <IoMdCloseCircle onClick={() => setNavbarOpen(!NavbarOpen)} size={25} />
+
+            {!NavbarOpen && windowDimension.width < 800 ? (
+                <TiThMenu onClick={() => setNavbarOpen(!NavbarOpen)} size={25}/>
+            ) :  windowDimension.width < 800 && (
+                <IoMdCloseCircle onClick={() => setNavbarOpen(!NavbarOpen)} color="#f6f6f6" size={25} />
             )}
-            {NavbarOpen && (
-                <ul>
-                    {links.map((x) => (
-                        <div>
-                            <Link onClick={() => setNavbarOpen(false)} smoot={true} duration={500} className={styles.navLink}>{x.link}</Link>
-                        </div>
-                    ))}
-                </ul>
+            
+
+            {(NavbarOpen || windowDimension.width > 800) && (
+                    <ul className={styles.linksContainer}>
+                        {links.map((x) => (
+                            <div>
+
+                                <Link to={x.link} onClick={() => setNavbarOpen(false)} 
+                                smoot={true} duration={500} 
+                                className={styles.navLink}>
+                                    {x.link}</Link>
+
+                                <div className={styles.border}></div>
+
+                            </div>
+                        ))}
+                    </ul>
             )}
 
         </div>
