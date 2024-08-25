@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import styles from './Navbar.module.css';
 import { TiThMenu } from "react-icons/ti";
 import { IoMdCloseCircle } from "react-icons/io";
+import { useScrollPosition } from "../Hooks/ScrollPosition";
 
  /*+-----------------------------------------------------------------------------------+*/   
 
@@ -34,21 +35,28 @@ const Navbar = () => {
         { id: 2, link: 'Tienda' },
         { id: 3, link: 'Ingresar' },
         { id: 4, link: 'Carrito' },
-        { id: 5, link: 'Contactos' },
-        { id: 6, link: 'Nosotros' },
+        { id: 5, link: 'Nosotros' },
+        { id: 6, link: 'Contactos' },
     ];
+
+    const scrollPosition = useScrollPosition();
 
  /*+-----------------------------------------------------------------------------------+*/   
 
     return (
-        <div className={!NavbarOpen ? styles.nav : styles.navOpen}>
+        <div className={NavbarOpen ? styles.navOpen : scrollPosition > 0 ? styles.navOnScroll : styles.nav}>
 
+{/*
+NavbarOpen ? styles.NavOpen
+: scrollPosition > 0 ? styles.navOnScroll
+ : styles.Navbar
+*/}
 
             <div>
                 {NavbarOpen ? (
                     <img src='public/images/logo_blanco-01.png' alt="Logo" className={styles.logoOpen} />
                 ) : (
-                    <img src='public/images/logo.png' alt="Logo" className={styles.logo} />
+                    <img src='public/images/logo.png' alt="Logo" className={scrollPosition > 0 ? styles.logoOnScroll : styles.logo} />
                 )}
             </div>
 
