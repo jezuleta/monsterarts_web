@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { TiThMenu } from "react-icons/ti";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useScrollPosition } from "../Hooks/ScrollPosition";
 
- /*+-----------------------------------------------------------------------------------+*/   
+ /*+-----------------------------------------------------------------+*/  
+
+
+
+
+
+ /*+-----------------------------------------------------------------+*/   
 
 const Navbar = () => {
     const [NavbarOpen, setNavbarOpen] = useState(false);
@@ -31,7 +37,7 @@ const Navbar = () => {
     },[windowDimension])
 
     const links = [
-        { id: 1, link: 'Home' },
+        { id: 1, link: 'Home'},
         { id: 2, link: 'Tienda' },
         { id: 3, link: 'Ingresar' },
         { id: 4, link: 'Carrito' },
@@ -45,12 +51,6 @@ const Navbar = () => {
 
     return (
         <div className={NavbarOpen ? styles.navOpen : scrollPosition > 0 ? styles.navOnScroll : styles.nav}>
-
-{/*
-NavbarOpen ? styles.NavOpen
-: scrollPosition > 0 ? styles.navOnScroll
- : styles.Navbar
-*/}
 
             <div>
                 {NavbarOpen ? (

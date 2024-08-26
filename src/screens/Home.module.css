@@ -1,0 +1,66 @@
+.banner{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.principal{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em 0;
+}
+
+.principalTittle{
+    font-family: "Bebas Neue";
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    color: #2d2d2d;
+}
+
+.flowers{
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.diferenciales{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.video{
+    width: 560px;
+    margin: 3em auto;
+}
+
+.mapa{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+
+/* +-------------------------------------+ */
+
+
+
+
+
+@media (max-width : 800px){
+    .principal{
+        width: 95%;
+    }
+    .diferenciales{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .video{
+        width: 95%;
+        height: auto;
+        margin: 3em auto;
+    }
+    
+}
