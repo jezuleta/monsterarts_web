@@ -3,15 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { TiThMenu } from "react-icons/ti";
 import { IoMdCloseCircle } from "react-icons/io";
-import { useScrollPosition } from "../Hooks/ScrollPosition";
+import { useScrollPosition } from "../Hooks/ScrollPosition"; 
 
- /*+-----------------------------------------------------------------+*/  
-
-
-
-
-
- /*+-----------------------------------------------------------------+*/   
+ /*+-----------------------------------------------------------------------------------+*/  
 
 const Navbar = () => {
     const [NavbarOpen, setNavbarOpen] = useState(false);
@@ -37,27 +31,30 @@ const Navbar = () => {
     },[windowDimension])
 
     const links = [
-        { id: 1, link: 'Home'},
-        { id: 2, link: 'Tienda' },
-        { id: 3, link: 'Ingresar' },
-        { id: 4, link: 'Carrito' },
-        { id: 5, link: 'Nosotros' },
-        { id: 6, link: 'Contactos' },
+        { id: 1, link: 'Tienda', to: '/Tienda' },
+        { id: 2, link: 'Ingresar', to: '/Ingresar' },
+        { id: 3, link: 'Carrito', to: '/Carrito' },
+        { id: 4, link: 'Nosotros', to: '/Nosotros' },
+        { id: 5, link: 'Contactos', to: '/Contactos' },
     ];
+
 
     const scrollPosition = useScrollPosition();
 
+
  /*+-----------------------------------------------------------------------------------+*/   
+
 
     return (
         <div className={NavbarOpen ? styles.navOpen : scrollPosition > 0 ? styles.navOnScroll : styles.nav}>
 
             <div>
-                {NavbarOpen ? (
+                <Link onClick={() => setNavbarOpen(false)}
+                to="/Home">{NavbarOpen ? (
                     <img src='public/images/logo_blanco-01.png' alt="Logo" className={styles.logoOpen} />
                 ) : (
                     <img src='public/images/logo.png' alt="Logo" className={scrollPosition > 0 ? styles.logoOnScroll : styles.logo} />
-                )}
+                )}</Link>
             </div>
 
 
@@ -69,20 +66,24 @@ const Navbar = () => {
             
 
             {(NavbarOpen || windowDimension.width > 800) && (
-                    <ul className={styles.linksContainer}>
-                        {links.map((x) => (
+                <nav>
+                     <ul className={styles.linksContainer}>
+                     {links.map((x) => (
                             <div>
 
                                 <Link to={x.link} onClick={() => setNavbarOpen(false)} 
                                 smoot={true} duration={500} 
                                 className={styles.navLink}>
                                     {x.link}</Link>
-
+                                    
                                 <div className={styles.border}></div>
 
                             </div>
                         ))}
+
                     </ul>
+                </nav>
+                    
             )}
 
         </div>
