@@ -5,7 +5,7 @@ import { TiThMenu } from "react-icons/ti";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useScrollPosition } from "../Hooks/ScrollPosition"; 
 
- /*+-----------------------------------------------------------------------------------+*/  
+/*+-----------------------------------------------------------------------------------+*/  
 
 const Navbar = () => {
     const [NavbarOpen, setNavbarOpen] = useState(false);
