@@ -1,0 +1,15 @@
+.principal{
+    background: url(../../../public/images/fondo_2.jpeg);
+    background-size: cover;
+    color: white;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    padding: 12px;
+    background: rgb(255, 255, 255, 0.2);
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+}

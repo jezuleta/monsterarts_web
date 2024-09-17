@@ -3,8 +3,13 @@ import style from './Ingresar.module.css'
 
 const Ingresar = () => {
   return (
-    <div>
-      Ingresar
+    <div className={style.principal}>
+      
+      <div className={style.box}>
+        <h1>Ingresar</h1>
+        
+      </div>
+
     </div>
   )
 }
