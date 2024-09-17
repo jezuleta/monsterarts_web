@@ -1,0 +1,22 @@
+.principal{
+    background: url(../../../public/images/fondo_2.jpeg);
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    margin: 1%;
+    padding: 12px;
+    background: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+}
+
+.title{
+    font-family: "Bebas neue";
+}
