@@ -6,20 +6,25 @@ const Ingresar = () => {
 
   const { register, handleSubmit} = useForm();
 
+  const onSubmit = (data) => {
+    console.log(data);
+  }
+
   return (
     <div className={style.principal}>
       
       <div className={style.box}>
         <h1 className={style.title} >Ingresar</h1>
-        <form action="">
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label>Correo</label>
-            <imput type="text" name="" />
+            <input type="mail" {...register('mail')} required/>
           </div>
           <div>
             <label>Constraseña</label>
-            <imput type="password" />
+            <input type="password" required/>
           </div>
+          <input type='submit' value='Enviar' />
         </form>
       </div>
 
