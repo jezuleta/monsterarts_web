@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { Producto } = require("../models");
+const { Envio } = require("../models");
 
 router.get("/", async (req, res) => {
     try {
-        const listOfProductos = await Producto.findAll();
-        res.json(listOfProductos);
+        const listOfEnvios = await Envio.findAll();
+        res.json(listOfEnvios);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -13,9 +13,9 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
-        const producto = req.body;
-        const newProducto = await Producto.create(producto);
-        res.status(201).json(newProducto);
+        const envio = req.body;
+        const newEnvio = await Envio.create(envio);
+        res.status(201).json(newEnvio);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
