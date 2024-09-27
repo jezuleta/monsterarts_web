@@ -19,12 +19,16 @@ const carritoRouter = require('./routes/CarritoRoute.js')
 const detalleCarritoRouter = require('./routes/DetalleCarritoRoute.js')
 const detallePedidoRouter = require('./routes/DetallePedidoRoute.js')
 const envioRouter = require('./routes/EnvioRoute.js')
+const pagoRouter = require('./routes/PagoRoute.js')
+const pedidoRouter = require('./routes/PedidoRoute.js')
 
 app.use('/api/usuario', usuarioRouter)
 app.use('/api/carrito', carritoRouter) 
 app.use('/api/detalleCarrito', detalleCarritoRouter)
 app.use('/api/detallePedido', detallePedidoRouter)
 app.use('/api/envio', envioRouter)
+app.use('/api/pago', pagoRouter)
+app.use('/api/pedido', pedidoRouter)
 
 // testing
 

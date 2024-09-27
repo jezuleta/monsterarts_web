@@ -1,4 +1,4 @@
-const envioController = require('../routes/EnvioRoute.js')
+const envioController = require('../controllers/EnvioControler.js')
 
 const router = require('express').Router()
 
