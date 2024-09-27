@@ -1,8 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Route, Routes } from "react-router-dom"
+
+/* +----------------------------------------------------+ */
+
+import axios from "axios";
+import { useEffect } from 'react';
+
+/* +----------------------------------------------------+ */
 
 import Navbar from './components/Navbar'
 import Home from './components/Screens/Home'
@@ -14,10 +19,20 @@ import Contactos from './components/Screens/Contactos'
 import Cliente from './components/Screens/Cliente' 
 import Footer from './components/Footer'
 
-
+/* +----------------------------------------------------+ */
 
 function App() {
   const [count, setCount] = useState(0)
+
+  /* +----------------------------------------------------+ */
+  
+  useEffect(() => {
+    axios.get("http://localhost:3001/Usuario").then((response) => {
+      console.log("testo")
+    })
+  }, [])
+
+  /* +----------------------------------------------------+ */
 
   return (
     <>

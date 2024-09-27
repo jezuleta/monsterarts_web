@@ -1,29 +1,46 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 
+var corOptions = {
+    origin: "http://localhost:3002"
+}
+
+// middleware
+
+app.use(cors(corOptions))
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
-const db = require('./models');
+// routers
 
-// Routers
-const UsuarioRouter = require('./routes/Usuario');
-app.use("/usuario", UsuarioRouter);
+const usuarioRouter = require('./routes/UsuarioRoute.js')
+const carritoRouter = require('./routes/CarritoRoute.js')
+const detalleCarritoRouter = require('./routes/DetalleCarritoRoute.js')
+const detallePedidoRouter = require('./routes/DetallePedidoRoute.js')
+const envioRouter = require('./routes/EnvioRoute.js')
 
-const ProductoRouter = require('./routes/Producto');
-app.use("/producto", ProductoRouter);
+app.use('/api/usuario', usuarioRouter)
+app.use('/api/carrito', carritoRouter) 
+app.use('/api/detalleCarrito', detalleCarritoRouter)
+app.use('/api/detallePedido', detallePedidoRouter)
+app.use('/api/envio', envioRouter)
 
-const PedidoRouter = require('./routes/Pedido');
-app.use("/pedido", PedidoRouter);
+// testing
 
-const DetallePedidoRouter = require('./routes/DetallePedido');
-app.use("/detallePedido", DetallePedidoRouter);
+app.get('/', (req, res) =>{
+    res.json({message: "hola que mas pues"})
+})
 
-db.sequelize.sync()
-    .then(() => {
-        app.listen(3001, () => {
-            console.log("Servidor corriendo en puerto 3001");
-        });
-    })
-    .catch(err => {
-        console.error('Error al sincronizar la base de datos:', err);
-    });
+// port
+
+const PORT = process.env.PORT || 3002;
+
+// server
+
+ app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`)
+ })
+
+
+
