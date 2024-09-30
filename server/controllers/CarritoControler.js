@@ -5,7 +5,7 @@ const Carrito = db.carrito;
 const addCarrito = async (req, res) => {
     try {
         let info = {
-            id_cliente: req.body.id_cliente,
+            id_usuario: req.body.id_usuario,
         };
         const carrito = await Carrito.create(info);
         res.status(200).send(carrito);

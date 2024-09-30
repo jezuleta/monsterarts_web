@@ -11,7 +11,7 @@ const datosNecesarios = { attributes: [
     'categoria',
     'stock',
     'imagen_url',
-    'id_artista'
+    'id_usuario'
 ]}
 
 // main work
@@ -26,7 +26,7 @@ const addProducto = async (req, res) => {
             categoria: req.body.categoria,
             stock: req.body.stock,
             imagen_url: req.body.imagen_url,
-            id_artista: req.body.id_artista
+            id_usuario: req.body.id_usuario
         }
 
         const producto = await Producto.create(info)

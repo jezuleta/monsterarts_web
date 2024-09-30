@@ -3,7 +3,7 @@ const detalleCarritoController = require('../controllers/DetalleCarritoControler
 
 const router = express.Router();
 
-router.post('/addDetalleCarrito', detalleCarritoController.addDetalleCarrito);
+router.post('/addDetalle', detalleCarritoController.addDetalleCarrito);
 router.get('/allDetalles', detalleCarritoController.getAllDetalles);
 router.get('/one/:id_detalle_carrito', detalleCarritoController.getOneDetalle);
 router.put('/update/:id_detalle_carrito', detalleCarritoController.updateDetalle);

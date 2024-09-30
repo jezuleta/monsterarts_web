@@ -74,8 +74,8 @@ module.exports = (sequelize, DataTypes) => {
   },
   
   {
-    tableName: 'usuarios',  // Nombre de la tabla en plural (opcional)
-    timestamps: false,      // No agrega campos createdAt y updatedAt automáticamente
+    tableName: 'usuario',  
+    timestamps: false,
   });
 
   return Usuario;

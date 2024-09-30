@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const DetallePedido = sequelize.define("DetallePedido", {
-      id_detalle: {
+      id_detalle_pedido: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'pedidos',
+          model: 'pedido',
           key: 'id_pedido',
         },
       },
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'productos',
+          model: 'producto',
           key: 'id_producto',
         },
       },
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       }
     }, {
-      tableName: 'detalles_pedido',
+      tableName: 'detallePedido',
       timestamps: false,
     });
   

@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
   
-      id_cliente: {
+      id_usuario: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'usuarios',
+          model: 'usuario',
           key: 'id_usuario',
         },
       },
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     
     {
-      tableName: 'pedidos',
+      tableName: 'pedido',
       timestamps: false,
     });
   

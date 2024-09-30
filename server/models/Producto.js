@@ -41,18 +41,18 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
   
-      id_artista: {
+      id_usuario: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'usuarios',
+          model: 'usuario',
           key: 'id_usuario',
         },
       }
     },
     
     {
-      tableName: 'productos',
+      tableName: 'producto',
       timestamps: false,
     });
   

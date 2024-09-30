@@ -2,8 +2,8 @@ const detallePedidoController = require('../controllers/DetallePedidoControler.j
 
 const router = require('express').Router()
 
-router.post('/addDetallePedido', detallePedidoController.addDetallePedido)
-router.get('/AllDetallesPedido', detallePedidoController.getAllDetallesPedido)
+router.post('/addDetalle', detallePedidoController.addDetallePedido)
+router.get('/AllDetalles', detallePedidoController.getAllDetallesPedido)
 
 router.get('/one/:id_detalle', detallePedidoController.getOneDetallePedido)
 router.put('/upd/:id_detalle', detallePedidoController.updateDetallePedido)

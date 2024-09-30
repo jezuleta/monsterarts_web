@@ -5,7 +5,6 @@ const Envio = db.envio
 
 const datosNecesarios = {
     attributes: [
-        'id_envio',
         'id_pedido',
         'direccion_envio',
         'fecha_envio',

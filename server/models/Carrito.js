@@ -4,17 +4,19 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+        unique: true,
       },
-      id_cliente: {
+      id_usuario: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'usuarios',
+          model: 'usuario',
           key: 'id_usuario',
+          unique: true,
         },
       }
     }, {
-      tableName: 'carritos',
+      tableName: 'carrito',
       timestamps: false,
     });
   

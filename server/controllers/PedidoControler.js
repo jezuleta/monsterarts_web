@@ -5,7 +5,7 @@ const Pedido = db.pedido
 
 const datosNecesarios = { attributes: [
     'id_pedido',
-    'id_cliente',
+    'id_usuario',
     'fecha_pedido',
     'estado',
     'total'
@@ -17,7 +17,7 @@ const datosNecesarios = { attributes: [
 const addPedido = async (req, res) => {
     try {
         let info = {
-            id_cliente: req.body.id_cliente,
+            id_usuario: req.body.id_usuario,
             fecha_pedido: req.body.fecha_pedido,
             estado: req.body.estado,
             total: req.body.total
@@ -91,10 +91,29 @@ const deletePedido = async (req, res) => {
     }
 }
 
+// 6. pedidos por usuario
+const pedidosPorUsuario = async (req, res) => {
+    const { id_usuario } = req.params; 
+
+    try {
+        const pedidos = await Pedido.findAll({
+            where: { id_usuario: id_usuario }, 
+        });
+        if (pedidos.length === 0) {
+            return res.status(404).send({ message: "No se encontraron pedidos para este usuario." });
+        }
+        res.status(200).send(pedidos);
+    } catch (error) {
+        console.error("Error obteniendo pedidos indicados: ", error);
+        res.status(500).send({ error: "Error obteniendo pedidos activos" });
+    }
+};
+
 module.exports = {
     addPedido,
     getAllPedidos,
     getOnePedido,
     updatePedido,
     deletePedido,
+    pedidosPorUsuario,
 }
