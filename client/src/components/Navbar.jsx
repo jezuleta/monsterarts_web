@@ -51,9 +51,9 @@ const Navbar = () => {
             <div>
                 <Link onClick={() => setNavbarOpen(false)}
                 to="/Home">{NavbarOpen ? (
-                    <img src='public/images/logo_blanco-01.png' alt="Logo" className={styles.logoOpen} />
+                    <img src='/images/logo_blanco-01.png' alt="Logo" className={styles.logoOpen} />
                 ) : (
-                    <img src='public/images/logo.png' alt="Logo" className={scrollPosition > 0 ? styles.logoOnScroll : styles.logo} />
+                    <img src='/images/logo.png' alt="Logo" className={scrollPosition > 0 ? styles.logoOnScroll : styles.logo} />
                 )}</Link>
             </div>
 

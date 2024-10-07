@@ -1,6 +1,7 @@
 {
   "name": "monsterarts_web",
   "private": true,
+  "proxy": "http://127.0.0.1:3002",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,10 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",

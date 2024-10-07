@@ -12,4 +12,3 @@ router.delete('/del/:id_usuario', usuarioController.deleteUsuario)
 router.get('/activado', usuarioController.activadoUsuarios)
 
 module.exports = router;
-
