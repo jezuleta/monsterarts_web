@@ -13,6 +13,10 @@
     text-decoration: none;
 }
 
+li{
+    list-style-type: none;
+}
+
 .logo{
     width: 120px;
     justify-content: center;

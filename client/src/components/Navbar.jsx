@@ -69,16 +69,17 @@ const Navbar = () => {
                 <nav>
                      <ul className={styles.linksContainer}>
                      {links.map((x) => (
-                            <div>
+                            <li key={x.id}>
 
                                 <Link to={x.link} onClick={() => setNavbarOpen(false)} 
-                                smoot={true} duration={500} 
-                                className={styles.navLink}>
-                                    {x.link}</Link>
+                                    duration={500} 
+                                    className={styles.navLink}>
+                                    {x.link}
+                                </Link>
                                     
                                 <div className={styles.border}></div>
 
-                            </div>
+                            </li>
                         ))}
 
                     </ul>

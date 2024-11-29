@@ -3,7 +3,7 @@ const productoController = require('../controllers/ProductoControler.js')
 const router = require('express').Router()
 
 router.post('/addProducto', productoController.addProducto)
-router.get('/AllProductos', productoController.getAllProductos)
+router.get('/allProductos', productoController.getAllProductos)
 
 router.get('/one/:id_producto', productoController.getOneProducto)
 router.put('/upd/:id_producto', productoController.updateProducto)

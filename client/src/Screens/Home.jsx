@@ -10,7 +10,7 @@ const Home = () => {
       <section className={style.principal}>
         <h1 className={style.principalTittle}>Bienvenidos a MonsterArts</h1>
 
-        <artitle>
+        <article>
           <img src="public/images/flores.png" className={style.flowers} />
           <p>            
             Bienvenidos a MonsterArts, donde la creatividad se encuentra con la inspiración para crear verdaderas obras maestras. Somos más que una tienda de arte; somos un refugio para todos aquellos apasionados por la autoexpresión y la belleza artística.
@@ -20,9 +20,10 @@ const Home = () => {
             Nos enorgullece ofrecer un ambiente acogedor y profesional donde cada cliente se sienta valorado y apoyado. Desde la selección de tus herramientas creativas hasta la adquisición de piezas exclusivas, estamos comprometidos a brindarte una experiencia excepcional en cada paso del proceso.
             <br/><br/>
             Únete a la comunidad de MonsterArts y descubre el poder de la autoexpresión a través del arte. Estamos aquí para ayudarte a contar tu historia, una obra de arte a la vez.
-            <br/><br/><hr/>
+            <br/><br/>
           </p>
-        </artitle>
+          <hr/>
+        </article>
       </section>
 
       <section className={style.diferenciales}>

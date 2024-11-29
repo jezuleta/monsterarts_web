@@ -20,7 +20,7 @@ import Cliente from '../src/Screens/Cliente'
 import Footer from './components/Footer'
 
 import AddProducto from '../src/Screens/Productos/AddProducto'
-import MostrarMisProductos from '../src/Screens/Productos/MostrarMisProductos'
+import MostrarProductos from './Screens/Productos/MostrarProductos.jsx'
 import EditarProducto from '../src/Screens/Productos/EditarProducto'
 import DetalleProducto from '../src/Screens/Productos/DetalleProducto'
 
@@ -54,7 +54,7 @@ function App() {
             <Route exact path="/cliente" element={<Cliente />} />
 
             <Route exact path="/addProducto" element={<AddProducto />} />
-            <Route exact path="/mostrarMisProductos" element={<MostrarMisProductos />} />
+            <Route exact path="/mostrarProductos" element={<MostrarProductos />} />
             <Route exact path="/producto/editar/:id" element={<EditarProducto/>} />
             <Route exact path="/producto/:id" element={<DetalleProducto/>} />
           </Routes>
